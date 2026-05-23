@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "git-mr"
+version = "0.1.0"
+description = "Interactive CLI to create GitLab merge requests with optional AI-generated content"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "git-mr contributors" }]
+keywords = ["gitlab", "merge-request", "cli"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Version Control",
+]
+dependencies = [
+    "requests>=2.31.0",
+    "python-dotenv>=1.0.0",
+    "openai>=1.0.0",
+    "rich>=13.0.0",
+    "prompt_toolkit>=3.0.0",
+]
+
+[project.scripts]
+git-mr = "gitmr.cli:main"
+
+[project.urls]
+Repository = "https://github.com/example/git-mr-tool"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["gitmr*"]
